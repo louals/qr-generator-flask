@@ -10,12 +10,15 @@ import traceback
 
 app = Flask(__name__)
 
-# Configure CORS - allow all origins for development
-# In production, you should specify allowed origins
-CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "http://localhost:8080", "http://127.0.0.1:5500"]}})
 
-# For development, you can also allow all origins:
-# CORS(app)
+CORS(app, resources={r"/*": {"origins": [
+    "http://localhost:3000",
+    "http://localhost:8080",
+    "http://127.0.0.1:5500",
+    "https://qr-studio.onrender.com"
+]}})
+
+
 
 # Error correction levels mapping
 ERROR_CORRECTION_MAP = {
